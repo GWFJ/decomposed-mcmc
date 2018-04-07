@@ -849,39 +849,39 @@ class DecomposeProcedure:
             # Plot population data at the end of cycle
 
             #----------------------------------------------------------------
-            outputCyclePopulations = 1
-
-            if outputCyclePopulations == 1:
-                clust_data = []
-
-                for y in range(self.populationSize):  # Go through each population
-                    temp = []
-                    for l in range(len(output[4][i])):  # Go through each species
-                        if y == output[4][i][l].BestIndex:
-                            temp.append('F:' + str(output[4][i][l].Populations[y].Fitness) + ' B ')
-                        else:
-                            temp.append('F:' + str(output[4][i][l].Populations[y].Fitness))
-
-                    clust_data.append(temp)
-
-                colLabels = []
-                for p in range(len(output[4][i])):
-                    colLabels.append('Species ' + str(p))
-
-                nrows, ncols = len(clust_data) + 1, len(colLabels)
-                hcell, wcell = 0.3, 1.
-                hpad, wpad = 0, 0
-                fig = plt.figure(figsize=(ncols * wcell + wpad, nrows * hcell + hpad))
-                ax = fig.add_subplot(111)
-                ax.axis('off')
-                # do the table
-                the_table = ax.table(cellText=clust_data,
-                                     colLabels=colLabels,
-                                     loc='center')
-                plt.savefig('mcmcresults/run' + str(run) + '/populationsData' + str(i) + '.png')
-                plt.savefig('mcmcresults/run' + str(run) + '/populationsData' + str(i) + '.svg', format='svg', dpi=600)
-                plt.close(fig)
-                plt.clf()
+            # outputCyclePopulations = 1
+            #
+            # if outputCyclePopulations == 1:
+            #     clust_data = []
+            #
+            #     for y in range(self.populationSize):  # Go through each population
+            #         temp = []
+            #         for l in range(len(output[4][i])):  # Go through each species
+            #             if y == output[4][i][l].BestIndex:
+            #                 temp.append('F:' + str(output[4][i][l].Populations[y].Fitness) + ' B ')
+            #             else:
+            #                 temp.append('F:' + str(output[4][i][l].Populations[y].Fitness))
+            #
+            #         clust_data.append(temp)
+            #
+            #     colLabels = []
+            #     for p in range(len(output[4][i])):
+            #         colLabels.append('Species ' + str(p))
+            #
+            #     nrows, ncols = len(clust_data) + 1, len(colLabels)
+            #     hcell, wcell = 0.3, 1.
+            #     hpad, wpad = 0, 0
+            #     fig = plt.figure(figsize=(ncols * wcell + wpad, nrows * hcell + hpad))
+            #     ax = fig.add_subplot(111)
+            #     ax.axis('off')
+            #     # do the table
+            #     the_table = ax.table(cellText=clust_data,
+            #                          colLabels=colLabels,
+            #                          loc='center')
+            #     plt.savefig('mcmcresults/run' + str(run) + '/populationsData' + str(i) + '.png')
+            #     plt.savefig('mcmcresults/run' + str(run) + '/populationsData' + str(i) + '.svg', format='svg', dpi=600)
+            #     plt.close(fig)
+            #     plt.clf()
 
             # ----------------------------------------------------------------
 
