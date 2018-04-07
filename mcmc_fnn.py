@@ -22,15 +22,17 @@
 # [Chandra_ICONIP2017] R. Chandra, L. Azizi, S. Cripps, 'Bayesian neural learning via Langevin dynamicsfor chaotic time series prediction', ICONIP 2017.
 # (to be addeded on https://www.researchgate.net/profile/Rohitash_Chandra)
 
+# ----------------------------------------------------------------------------------------------------------------------------------------
+# Edited Gary Wong
+# Decomposed MCMC Steps
 
-# Strategy 1:
 # Randomize Populations
 # For number of cycles on all sub-components,
 #   Pick random indexes in population n
 #       Create network individual by combining with best from other sub-populations (best defaulted to 0 index in all sub-populations)
 #       Run MCMC for a number of samples
 #       Get back individual, divide back into appropriate sections, replace current random index with refined weights
-# Note: Elitism is lost, traits from previous best solutions are lost due to randomized generation of proposal weights in MCMC
+# Note: Elitism may be lost, traits from previous best solutions are lost due to randomized generation of proposal weights in MCMC
 
 
 
